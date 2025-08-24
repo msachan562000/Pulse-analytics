@@ -1,0 +1,35 @@
+{
+  "name": "pulse-analytics-api",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "build": "esbuild src/index.js --bundle --platform=node --format=esm --outfile=dist/index.js",
+    "start": "node dist/index.js",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "db:seed": "node prisma/seed.js",
+    "db:setup": "prisma generate && prisma migrate deploy && node prisma/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.16.2",
+    "axios": "^1.7.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.17.3",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-cron": "^3.0.3",
+    "passport": "^0.7.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-linkedin-oauth2": "^2.0.0",
+    "zod": "^3.23.8",
+    "crypto-js": "^4.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0",
+    "nodemon": "^3.1.0",
+    "prisma": "^5.16.2"
+  }
+}
